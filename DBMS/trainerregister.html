@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+</head>
+
+<body>
+    <div class="bgimg">
+        <img id="bg" src="images/trainer.jpg" alt="">
+
+    </div>
+
+    <div class="main">
+        <div id="overlay"></div>
+        <div class="main-left">
+
+            <div class="menu1">
+                <div class="elements1">
+                    <p style="color: white;">Members</p>
+                </div>
+                <div class="elements"><a href="memberlist.php">Member details</a></div>
+                <div class="elements"><a href="memberregister.html">Add New Member</a></div>
+            </div>
+
+            <div class="trainer-container">
+                <div class="trainers"><a href="trainerlist.php">
+                        <p>Trainers</p>
+                    </a></div>
+                <div class="add-trainer">
+                    <a href="trainerregister.html">
+                        <p style="border-bottom: 0;">Add New Trainer</p>
+                    </a>
+                </div>
+
+            </div>
+            <button class="button" id="logout"><span>Logout</span></button>
+
+        </div>
+        <div class="fill">
+            <div class="title">
+                <p style="color: white;">TRAINER REGISTER HERE</p>
+            </div>
+            <form class="form" action="trainerregister.php" method="post">
+                <input class="input_text" name="fname" type="text" placeholder="First Name" required>
+                <input class="input_text" name="lname" type="text" placeholder="Last Name" required>
+                <input type="email" class="input_text" name="email" placeholder="Email" required>
+                <input type="text" class="input_text" name="phone" placeholder="Contact number" required>
+                <input type="text" class="input_text" name="salary" placeholder="Salary"> <br>
+                <button type="submit" class="button"><span>Register</span></button>
+            </form>
+        </div>
+
+    </div>
+</body>
+
+</html>
+
+<script>
+    function on() {
+        document.getElementById("overlay").style.display = "block";
+    }
+
+    function off() {
+        document.getElementById("overlay").style.display = "none";
+    }
+</script>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0%;
+    }
+
+    .bgimg {
+        width: 100%;
+    }
+
+    #bg {
+        width: 100%;
+        height: 300px;
+    }
+
+    .main #overlay {
+        position: fixed;
+        /* Sit on top of the page content */
+        display: none;
+        /* Hidden by default */
+        width: 100%;
+        /* Full width (cover the whole page) */
+        height: 100%;
+        /* Full height (cover the whole page) */
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        /* Black background with opacity */
+        z-index: 2;
+        /* Specify a stack order in case you're using a different order for other elements */
+        cursor: pointer;
+        /* Add a pointer on hover */
+    }
+
+    .main .main-left .menu1 {
+        float: left;
+        width: 20%;
+        position: relative;
+        left: 20px;
+        margin-top: 15px;
+        border: 1px solid rgb(203, 203, 203);
+        border-radius: 5px;
+    }
+
+    .main .main-left .menu1 .elements {
+        padding: 5px;
+
+        border-bottom: 1px solid rgb(203, 203, 203);
+
+    }
+
+    .main .main-left .menu1 .elements1 {
+        border: 1px solid rgb(30, 124, 255);
+        border-radius: 5px 5px 0 0;
+        padding: 5px;
+        border-bottom: 1px solid rgb(203, 203, 203);
+        background-color: rgb(30, 124, 255);
+    }
+
+    .main .main-left .menu1 .elements1 span {
+        color: white;
+    }
+
+    .main .menu1 .members {
+        border: 1px solid rgb(203, 203, 203);
+    }
+
+    .button span {
+        cursor: pointer;
+        display: inline-block;
+        position: relative;
+        transition: 0.5s;
+    }
+
+    .button span:after {
+        color: white;
+        content: '\00bb';
+        position: absolute;
+        opacity: 0;
+        top: 0;
+        right: -20px;
+        transition: 0.25s;
+    }
+
+    .button:hover span {
+        color: white;
+        padding-right: 25px;
+    }
+
+    .button:hover span:after {
+        color: white;
+        opacity: 1;
+        right: 0;
+    }
+
+    .main .main-left .trainer-container {
+        border: 1px solid rgb(255, 255, 255);
+        border-radius: 5px;
+        width: 20%;
+        background-color: rgb(30, 124, 255);
+        float: left;
+        position: absolute;
+        top: 68%;
+        left: 20px;
+        text-decoration-color: black;
+    }
+
+    .main .main-left .trainer-container div {
+        padding: 5px 0 5px 0;
+    }
+
+    .main .main-left .trainer-container div p {
+        font-size: 15px;
+        color: white;
+        border-bottom: 1px solid rgb(255, 255, 255);
+    }
+
+
+    .main .main-left .button {
+        font-size: 20px;
+        position: absolute;
+        background-color: rgb(30, 124, 255);
+        color: black;
+        border-color: rgb(30, 124, 255);
+        border-radius: 5px;
+        padding: 10px;
+        bottom: 2%;
+        left: 20px;
+    }
+
+    .main .fill .title {
+        background-color: rgb(30, 124, 255);
+        height: 35px;
+        font-weight: 300;
+        font-size: 20px;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        border-radius: 10px 10px 0 0;
+        border-bottom: 1px solid rgb(203, 203, 203);
+    }
+
+    .main .fill .title p {
+        position: relative;
+        padding: 5px;
+        padding-top: 2px;
+        padding-left: 10px;
+    }
+
+    .main .fill {
+        float: left;
+        border: 1px solid rgb(203, 203, 203);
+        margin-top: 30px;
+        justify-content: center;
+        width: 600px;
+        position: absolute;
+        left: 30%;
+        top: 45%;
+        border-radius: 10px;
+    }
+
+    .main .fill .form {
+        width: 800px;
+        position: relative;
+        left: 10%;
+    }
+
+    .main .fill .form .input_text {
+        margin-top: 20px;
+
+        padding: 10px;
+        width: 50%;
+
+    }
+
+    .main .fill .form .button 
+    {
+        font-size: 20px;
+        margin-top: 20px;
+        background-color: rgb(30, 124, 255);
+        padding: 5px;
+        border-radius: 5px;
+        border-color: rgb(30, 124, 255);
+        font-weight: 400;
+    }
+ </style>
